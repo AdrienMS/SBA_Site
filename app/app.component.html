@@ -1,0 +1,52 @@
+﻿<!--<header>
+    <nav>
+        <ul class="links-url">
+            <li>
+                <a [routerLink]="['/']" class="logoTxt"><img src="assets/img/SBA_logo.png" /></a>
+            </li>
+            <li><a class="links" href="#">News</a></li>
+            <li><a class="links" [routerLink]="['/shop']">Shop</a></li>
+            <li><a class="links" [routerLink]="['/smithy']">Smithy</a></li>
+            <li><a class="links" href="#">Forum</a></li>
+        </ul>
+        <ul class="links-connexion">
+            <div *ngIf="connect">connect</div>
+            <li>{{user_item}}</li>
+            <div *ngIf="users; else connectBlock">
+                <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+                <p><a [routerLink]="['/logout']">Logout</a></p>
+            </div>
+            <ng-template #connectBlock>
+                <li><a class="links connexion" [routerLink]="['/login']">Sign In</a></li>
+                <li>
+                    <p>|</p>
+                </li>
+                <li><a class="links connexion" href="/register">Register</a></li>
+            </ng-template>
+        </ul>
+    </nav>
+</header>-->
+<router-outlet></router-outlet>
+<footer>
+    <ul class="social-link">
+        <li>
+            <a href="#" class="fa fa-facebook"></a>
+        </li>
+        <li>
+            <a href="#" class="fa fa-twitter"></a>
+        </li>
+        <li>
+            <a href="#" class="fa fa-youtube"></a>
+        </li>
+    </ul>
+    <ul class="logo">
+        <li><img src="assets/img/SBA_logo.png" /></li>
+    </ul>
+    <ul class="linked-pages">
+        <li><a href="#" class="link">Policy</a></li>
+        <li>
+            <p>|</p>
+        </li>
+        <li><a href="#" class="link">About</a></li>
+    </ul>
+</footer>

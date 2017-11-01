@@ -1,0 +1,88 @@
+﻿<header>
+    <nav>
+        <ul class="links-url">
+            <li>
+                <a [routerLink]="['/']" class="logoTxt"><img src="assets/img/SBA_logo.png" /></a>
+            </li>
+            <li><a class="links" href="#">News</a></li>
+            <li><a class="links" [routerLink]="['/shop']">Shop</a></li>
+            <li><a class="links" [routerLink]="['/smithy']">Smithy</a></li>
+            <li><a class="links" href="#">Forum</a></li>
+        </ul>
+        <ul class="links-connexion">
+            <div *ngIf="users !== null && users !== undefined; else connectBlock">
+                <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+                <li>
+                    <p>|</p>
+                </li>
+                <li><a [routerLink]="['/logout']">Logout</a></li>
+            </div>
+            <ng-template #connectBlock>
+                <li><a class="links connexion" [routerLink]="['/login']">Sign In</a></li>
+                <li>
+                    <p>|</p>
+                </li>
+                <li><a class="links connexion" href="/register">Register</a></li>
+            </ng-template>
+        </ul>
+    </nav>
+</header>
+<div id="home">
+    <section>
+        <div class="video">
+            <video autoplay="" loop="" muted poster="../../assets/img/test.png" data-js="header-video">
+                <source src="../../assets/video/test_video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="logo">
+            <img src="../../assets/img/SBA_logo.png" />
+            <h2>Space Battle Arena</h2>
+        </div>
+        <div class="platform">
+            <img src="../../assets/img/oculus-logo.png" alt="logo oculus rift" />
+            <img src="../../assets/img/htc-vive-logo.png" alt="logo htc vive" />
+            <img src="../../assets/img/steam-vr-logo.png" alt="logo steam vr" class="right" />
+        </div>
+    </section>
+    <section class="last-news">
+        <h2>LAST NEWS</h2>
+        <div class="news-list">
+            <!--Script de génération automatique à faire-->
+            <div class="news">
+                <img src="../../assets/img/example-news.png" alt="news1" />
+                <p>news 1</p>
+            </div>
+            <div class="news">
+                <img src="../../assets/img/example-news.png" alt="news2" />
+                <p>news 2</p>
+            </div>
+            <div class="news">
+                <img src="../../assets/img/example-news.png" alt="news3" />
+                <p>news 3</p>
+            </div>
+        </div>
+        <div class="button">
+            <a href="#" class="all-news-button">ALL NEWS</a>
+        </div>
+    </section>
+    <section class="story">
+        <h2>STORY</h2>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin nibh finibus posuere laoreet. Etiam metus urna, cursus vulputate euismod tristique, volutpat eu diam. Nulla scelerisque, sapien eget malesuada bibendum, augue ante consequat neque,
+                id fringilla nunc libero eu ligula. In semper justo sit amet ullamcorper lacinia. Vestibulum mattis, odio ut eleifend ultricies, erat neque rhoncus sem, at finibus felis arcu in risus. Suspendisse sed massa dui. Pellentesque suscipit libero
+                id ex consectetur, eu sollicitudin lacus lacinia. Sed vitae vestibulum quam. Donec sit amet aliquet mi, vel scelerisque arcu. Proin egestas fermentum augue, quis placerat eros tristique sit amet. Praesent ut odio sed nisi rutrum rutrum
+                nec sed metus. Praesent augue leo, mollis vitae mattis eu, posuere quis lorem.
+            </p>
+            <p>
+                Quisque elementum sed turpis vitae tincidunt. Mauris ligula ex, tincidunt vel bibendum et, dignissim eu arcu. Duis lobortis sit amet lacus non rutrum. Morbi cursus odio non turpis semper mattis. Donec in sollicitudin lacus, vitae mattis libero. Quisque
+                luctus pulvinar dui, facilisis interdum nisi scelerisque ut. Integer volutpat condimentum varius.
+            </p>
+            <p>
+                Etiam quis tellus at erat mattis rhoncus. Vestibulum sit amet eros ullamcorper, dapibus lacus ac, viverra lacus. Sed pharetra sodales condimentum. Donec imperdiet non magna ornare interdum. Donec vel lectus tincidunt dolor fringilla sollicitudin nec non
+                urna. Integer vitae faucibus turpis, at aliquet odio. Curabitur odio arcu, blandit at tortor vel, vulputate venenatis felis. Praesent rutrum consectetur ultricies. Mauris laoreet mauris vitae luctus faucibus. Praesent risus tortor, consectetur
+                a vulputate eget, rutrum condimentum libero.
+            </p>
+        </div>
+    </section>
+</div>

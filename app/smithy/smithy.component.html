@@ -1,0 +1,31 @@
+<header>
+    <nav>
+        <ul class="links-url">
+            <li>
+                <a [routerLink]="['/']" class="logoTxt"><img src="assets/img/SBA_logo.png" /></a>
+            </li>
+            <li><a class="links" href="#">News</a></li>
+            <li><a class="links" [routerLink]="['/shop']">Shop</a></li>
+            <li><a class="links" [routerLink]="['/smithy']">Smithy</a></li>
+            <li><a class="links" href="#">Forum</a></li>
+        </ul>
+        <ul class="links-connexion">
+            <div *ngIf="connect">connect</div>
+            <li>{{user_item}}</li>
+            <div *ngIf="users; else connectBlock">
+                <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+                <p><a [routerLink]="['/logout']">Logout</a></p>
+            </div>
+            <ng-template #connectBlock>
+                <li><a class="links connexion" [routerLink]="['/login']">Sign In</a></li>
+                <li>
+                    <p>|</p>
+                </li>
+                <li><a class="links connexion" href="/register">Register</a></li>
+            </ng-template>
+        </ul>
+    </nav>
+</header>
+<div id="smithy">
+    <p>Smithy</p>
+</div>

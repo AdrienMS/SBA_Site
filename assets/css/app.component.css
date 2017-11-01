@@ -1,0 +1,139 @@
+li {
+  list-style: none; }
+
+a {
+  color: white;
+  padding: 8px 16px;
+  margin: 8px;
+  vertical-align: middle;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px; }
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif header;
+    font-family-background-color: primary; }
+  html .example-fill-remaining-space,
+  body .example-fill-remaining-space {
+    flex: 2 2 auto; }
+  html header,
+  body header {
+    width: 100%;
+    z-index: 97;
+    position: fixed;
+    top: 0; }
+    html header nav,
+    body header nav {
+      background-color: #111111;
+      height: 80px;
+      font-size: 20px; }
+      html header nav .links-url,
+      body header nav .links-url {
+        display: flex;
+        float: left; }
+        html header nav .links-url li .logoTxt,
+        body header nav .links-url li .logoTxt {
+          line-height: 80px;
+          margin-left: 20px;
+          margin-right: 20px; }
+          html header nav .links-url li .logoTxt img,
+          body header nav .links-url li .logoTxt img {
+            width: 50px;
+            margin-top: 15px; }
+        html header nav .links-url li .links,
+        body header nav .links-url li .links {
+          height: 100%;
+          line-height: 80px;
+          margin-left: 20px;
+          margin-right: 20px; }
+          html header nav .links-url li .links:hover,
+          body header nav .links-url li .links:hover {
+            color: red;
+            text-decoration: none; }
+      html header nav .links-connexion,
+      body header nav .links-connexion {
+        float: right;
+        display: flex;
+        color: white; }
+        html header nav .links-connexion .links,
+        body header nav .links-connexion .links {
+          height: 100%;
+          line-height: 80px;
+          margin-left: 20px;
+          margin-right: 20px; }
+          html header nav .links-connexion .links:hover,
+          body header nav .links-connexion .links:hover {
+            color: red; }
+        html header nav .links-connexion p,
+        body header nav .links-connexion p {
+          line-height: 80px; }
+        html header nav .links-connexion div,
+        body header nav .links-connexion div {
+          display: flex; }
+          html header nav .links-connexion div li,
+          body header nav .links-connexion div li {
+            line-height: 80px;
+            margin-left: 20px;
+            margin-right: 20px; }
+
+footer {
+  background-color: #111111;
+  display: flex;
+  height: 120px;
+  width: 100%; }
+  footer div {
+    width: 33.3333333%;
+    display: flex; }
+  footer .social-link {
+    float: left;
+    display: flex;
+    width: 20%; }
+    footer .social-link li {
+      margin-top: 23px;
+      margin-left: 20%;
+      margin-right: 20%; }
+      footer .social-link li a.fa {
+        color: white;
+        text-decoration: none;
+        font-size: 2em;
+        width: 15%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-top: 18px; }
+        footer .social-link li a.fa:hover {
+          color: red; }
+      footer .social-link li .fa-facebook {
+        margin-left: 13%; }
+  footer .logo {
+    margin-left: auto;
+    margin-right: auto; }
+    footer .logo img {
+      width: 5em;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+  footer .linked-pages {
+    float: right;
+    display: flex;
+    width: 20%; }
+    footer .linked-pages li {
+      margin-top: 45px;
+      margin-left: 5%;
+      margin-right: 5%; }
+      footer .linked-pages li a.link {
+        color: white;
+        text-decoration: none;
+        font-size: 23px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 28px; }
+        footer .linked-pages li a.link:hover {
+          color: red; }
+      footer .linked-pages li p {
+        color: white;
+        font-size: 23px; }

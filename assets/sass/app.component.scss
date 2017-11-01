@@ -1,0 +1,163 @@
+li {
+    list-style: none;
+}
+
+a {
+    color: white;
+    padding: 8px 16px;
+    margin: 8px;
+    vertical-align: middle;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Arial,
+    Helvetica,
+    sans-serif header {
+        background-color: primary
+    }
+    .example-fill-remaining-space {
+        // This fills the remaining space, by using flexbox. 
+        // Every toolbar row uses a flexbox row layout.
+        flex: 2 2 auto;
+    }
+    header {
+        width: 100%;
+        z-index: 97;
+        position: fixed;
+        top: 0;
+        nav {
+            background-color: #111111;
+            height: 80px;
+            font-size: 20px;
+            .links-url {
+                display: flex;
+                float: left;
+                li {
+                    .logoTxt {
+                        line-height: 80px;
+                        margin-left: 20px;
+                        margin-right: 20px;
+                        img {
+                            width: 50px;
+                            margin-top: 15px;
+                        }
+                    }
+                    .links {
+                        height: 100%;
+                        line-height: 80px;
+                        margin-left: 20px;
+                        margin-right: 20px;
+                        &:hover {
+                            color: red;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .links-connexion {
+                float: right;
+                display: flex;
+                color: white;
+                .links {
+                    height: 100%;
+                    line-height: 80px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    &:hover {
+                        color: red;
+                    }
+                }
+                p {
+                    line-height: 80px;
+                }
+                div {
+                    display: flex;
+                    li {
+                        line-height: 80px;
+                        margin-left: 20px;
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #111111;
+    display: flex;
+    height: 120px;
+    width: 100%;
+    div {
+        width: 33.3333333%;
+        display: flex;
+    }
+    .social-link {
+        float: left;
+        display: flex;
+        width: 20%;
+        li {
+            margin-top: 23px;
+            margin-left: 20%;
+            margin-right: 20%;
+            a.fa {
+                color: white;
+                text-decoration: none;
+                font-size: 2em;
+                width: 15%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                margin-top: 18px;
+                &:hover {
+                    color: red;
+                }
+            }
+            .fa-facebook {
+                margin-left: 13%;
+            }
+        }
+    }
+    .logo {
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            width: 5em;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .linked-pages {
+        float: right;
+        display: flex;
+        width: 20%;
+        li {
+            margin-top: 45px;
+            margin-left: 5%;
+            margin-right: 5%;
+            a.link {
+                color: white;
+                text-decoration: none;
+                font-size: 23px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 28px;
+                &:hover {
+                    color: red;
+                }
+            }
+            p {
+                color: white;
+                font-size: 23px;
+            }
+        }
+    }
+}
