@@ -11,10 +11,14 @@ import { UserService } from './_services/index';
 })
 
 export class AppComponent implements OnInit {
+    currentUser: User;
+    user: User[] = [];
 
-    constructor() {}
+    constructor(private userService: UserService) {
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    }
 
     ngOnInit() {
-        
+        this.userService.getById(this.currentUser.id).subscribe(user => { this.user = user; });
     }
 }

@@ -5,11 +5,11 @@ import { User } from '../_models/index';
 
 @Component({
   moduleId: module.id,
-  selector: 'smithy',  // <smithy></smithy>
-  styleUrls: [ '../../assets/css/smithy.component.css' ],
-  templateUrl: 'smithy.component.html'
+  selector: 'about',  // <smithy></smithy>
+  styleUrls: [ '../../assets/css/about.component.css' ],
+  templateUrl: 'about.component.html'
 })
-export class SmithyComponent {
+export class AboutComponent {
     currentUser: User;
     user: User[] = [];
 

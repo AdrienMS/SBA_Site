@@ -25,59 +25,147 @@ body {
     z-index: 97;
     position: fixed;
     top: 0; }
-    html header nav,
-    body header nav {
+    html header nav.on-top,
+    body header nav.on-top {
       background-color: #111111;
       height: 80px;
       font-size: 20px; }
-      html header nav .links-url,
-      body header nav .links-url {
+      html header nav.on-top .logoTxt-responsive,
+      body header nav.on-top .logoTxt-responsive {
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%; }
+        html header nav.on-top .logoTxt-responsive img,
+        body header nav.on-top .logoTxt-responsive img {
+          width: 50px;
+          margin-top: 15px; }
+        @media screen and (max-width: 800px) {
+          html header nav.on-top .logoTxt-responsive,
+          body header nav.on-top .logoTxt-responsive {
+            display: block; } }
+      html header nav.on-top input#show-menu[type=checkbox]:checked ~ .links-url,
+      body header nav.on-top input#show-menu[type=checkbox]:checked ~ .links-url {
+        display: block; }
+      html header nav.on-top .links-url,
+      body header nav.on-top .links-url {
         display: flex;
         float: left; }
-        html header nav .links-url li .logoTxt,
-        body header nav .links-url li .logoTxt {
-          line-height: 80px;
+        html header nav.on-top .links-url li .logoTxt,
+        body header nav.on-top .links-url li .logoTxt {
           margin-left: 20px;
           margin-right: 20px; }
-          html header nav .links-url li .logoTxt img,
-          body header nav .links-url li .logoTxt img {
+          html header nav.on-top .links-url li .logoTxt img,
+          body header nav.on-top .links-url li .logoTxt img {
             width: 50px;
             margin-top: 15px; }
-        html header nav .links-url li .links,
-        body header nav .links-url li .links {
+          @media screen and (max-width: 800px) {
+            html header nav.on-top .links-url li .logoTxt,
+            body header nav.on-top .links-url li .logoTxt {
+              display: none; } }
+        html header nav.on-top .links-url li .links,
+        body header nav.on-top .links-url li .links {
           height: 100%;
           line-height: 80px;
           margin-left: 20px;
           margin-right: 20px; }
-          html header nav .links-url li .links:hover,
-          body header nav .links-url li .links:hover {
+          html header nav.on-top .links-url li .links:hover,
+          body header nav.on-top .links-url li .links:hover {
             color: red;
             text-decoration: none; }
-      html header nav .links-connexion,
-      body header nav .links-connexion {
+        @media screen and (max-width: 800px) {
+          html header nav.on-top .links-url,
+          body header nav.on-top .links-url {
+            display: none;
+            background-color: #111111;
+            margin-top: 0;
+            width: 30%;
+            float: none; } }
+        @media screen and (max-width: 450px) {
+          html header nav.on-top .links-url,
+          body header nav.on-top .links-url {
+            width: 50%;
+            display: none;
+            background-color: #111111;
+            margin-top: 0;
+            float: none; } }
+      html header nav.on-top input#show-menu[type=checkbox]:checked ~ .links-connexion,
+      body header nav.on-top input#show-menu[type=checkbox]:checked ~ .links-connexion {
+        display: block; }
+      html header nav.on-top .links-connexion,
+      body header nav.on-top .links-connexion {
         float: right;
         display: flex;
         color: white; }
-        html header nav .links-connexion .links,
-        body header nav .links-connexion .links {
+        @media screen and (max-width: 800px) {
+          html header nav.on-top .links-connexion li.separate,
+          body header nav.on-top .links-connexion li.separate {
+            display: none; } }
+        html header nav.on-top .links-connexion .links,
+        body header nav.on-top .links-connexion .links {
           height: 100%;
           line-height: 80px;
           margin-left: 20px;
           margin-right: 20px; }
-          html header nav .links-connexion .links:hover,
-          body header nav .links-connexion .links:hover {
-            color: red; }
-        html header nav .links-connexion p,
-        body header nav .links-connexion p {
+          html header nav.on-top .links-connexion .links:hover,
+          body header nav.on-top .links-connexion .links:hover {
+            color: red;
+            text-decoration: none; }
+        html header nav.on-top .links-connexion p,
+        body header nav.on-top .links-connexion p {
           line-height: 80px; }
-        html header nav .links-connexion div,
-        body header nav .links-connexion div {
+        html header nav.on-top .links-connexion div,
+        body header nav.on-top .links-connexion div {
           display: flex; }
-          html header nav .links-connexion div li,
-          body header nav .links-connexion div li {
+          html header nav.on-top .links-connexion div li,
+          body header nav.on-top .links-connexion div li {
             line-height: 80px;
             margin-left: 20px;
             margin-right: 20px; }
+            html header nav.on-top .links-connexion div li a:hover,
+            body header nav.on-top .links-connexion div li a:hover {
+              color: red;
+              text-decoration: none; }
+          @media screen and (max-width: 800px) {
+            html header nav.on-top .links-connexion div li.separate,
+            body header nav.on-top .links-connexion div li.separate {
+              display: none; } }
+          @media screen and (max-width: 800px) {
+            html header nav.on-top .links-connexion div,
+            body header nav.on-top .links-connexion div {
+              display: block; } }
+        @media screen and (max-width: 800px) {
+          html header nav.on-top .links-connexion,
+          body header nav.on-top .links-connexion {
+            display: none;
+            float: none;
+            background-color: #111111;
+            width: 30%; } }
+        @media screen and (max-width: 450px) {
+          html header nav.on-top .links-connexion,
+          body header nav.on-top .links-connexion {
+            width: 50%;
+            display: none;
+            float: none;
+            background-color: #111111; } }
+      html header nav.on-top .show-menu,
+      body header nav.on-top .show-menu {
+        color: #fff;
+        display: none;
+        margin: 23px 36px;
+        position: fixed;
+        cursor: pointer; }
+        html header nav.on-top .show-menu span,
+        body header nav.on-top .show-menu span {
+          font-size: 30px; }
+        @media screen and (max-width: 800px) {
+          html header nav.on-top .show-menu,
+          body header nav.on-top .show-menu {
+            display: block; } }
+      html header nav.on-top input#show-menu[type=checkbox],
+      body header nav.on-top input#show-menu[type=checkbox] {
+        display: none;
+        -webkit-appearance: none; }
 
 footer {
   background-color: #111111;
@@ -88,13 +176,9 @@ footer {
     width: 33.3333333%;
     display: flex; }
   footer .social-link {
-    float: left;
-    display: flex;
-    width: 20%; }
+    display: flex; }
     footer .social-link li {
-      margin-top: 23px;
-      margin-left: 20%;
-      margin-right: 20%; }
+      margin-top: 23px; }
       footer .social-link li a.fa {
         color: white;
         text-decoration: none;
@@ -108,23 +192,39 @@ footer {
           color: red; }
       footer .social-link li .fa-facebook {
         margin-left: 13%; }
+      @media screen and (max-width: 800px) {
+        footer .social-link li {
+          margin-top: 0;
+          margin-left: auto;
+          margin-right: auto; } }
+    @media screen and (max-width: 800px) {
+      footer .social-link {
+        width: 100%; } }
   footer .logo {
     margin-left: auto;
     margin-right: auto; }
-    footer .logo img {
+    @media screen and (max-width: 800px) {
+      footer .logo li {
+        margin-left: auto;
+        margin-right: auto; } }
+    footer .logo li img {
       width: 5em;
       margin-left: auto;
       margin-right: auto;
       margin-top: 20px;
       margin-bottom: 20px; }
+      @media screen and (max-width: 800px) {
+        footer .logo li img {
+          margin-bottom: 0;
+          margin-top: 0; } }
+    @media screen and (max-width: 800px) {
+      footer .logo {
+        width: 100%;
+        display: flex; } }
   footer .linked-pages {
-    float: right;
-    display: flex;
-    width: 20%; }
+    display: flex; }
     footer .linked-pages li {
-      margin-top: 45px;
-      margin-left: 5%;
-      margin-right: 5%; }
+      margin-top: 45px; }
       footer .linked-pages li a.link {
         color: white;
         text-decoration: none;
@@ -137,3 +237,15 @@ footer {
       footer .linked-pages li p {
         color: white;
         font-size: 23px; }
+      @media screen and (max-width: 800px) {
+        footer .linked-pages li {
+          margin-left: auto;
+          margin-right: auto; } }
+    @media screen and (max-width: 800px) {
+      footer .linked-pages {
+        width: 100%;
+        padding-bottom: 20px; } }
+  @media screen and (max-width: 800px) {
+    footer {
+      display: block;
+      height: auto; } }

@@ -31,21 +31,39 @@ body {
         z-index: 97;
         position: fixed;
         top: 0;
-        nav {
+        nav.on-top {
             background-color: #111111;
             height: 80px;
             font-size: 20px;
+            .logoTxt-responsive {
+                display: none;
+                margin-left: auto;
+                margin-right: auto;
+                width: 20%;
+                img {
+                    width: 50px;
+                    margin-top: 15px;
+                }
+                @media screen and (max-width: 800px) {
+                    display: block;
+                }
+            }
+            input#show-menu[type=checkbox]:checked~.links-url {
+                display: block;
+            }
             .links-url {
                 display: flex;
                 float: left;
                 li {
                     .logoTxt {
-                        line-height: 80px;
                         margin-left: 20px;
                         margin-right: 20px;
                         img {
                             width: 50px;
                             margin-top: 15px;
+                        }
+                        @media screen and (max-width: 800px) {
+                            display: none;
                         }
                     }
                     .links {
@@ -59,11 +77,33 @@ body {
                         }
                     }
                 }
+                @media screen and (max-width: 800px) {
+                    display: none;
+                    background-color: #111111;
+                    margin-top: 0;
+                    width: 30%;
+                    float: none;
+                }
+                @media screen and (max-width: 450px) {
+                    width: 50%;
+                    display: none;
+                    background-color: #111111;
+                    margin-top: 0;
+                    float: none;
+                }
+            }
+            input#show-menu[type=checkbox]:checked~.links-connexion {
+                display: block;
             }
             .links-connexion {
                 float: right;
                 display: flex;
                 color: white;
+                li.separate {
+                    @media screen and (max-width: 800px) {
+                        display: none;
+                    }
+                }
                 .links {
                     height: 100%;
                     line-height: 80px;
@@ -71,6 +111,7 @@ body {
                     margin-right: 20px;
                     &:hover {
                         color: red;
+                        text-decoration: none;
                     }
                 }
                 p {
@@ -82,8 +123,51 @@ body {
                         line-height: 80px;
                         margin-left: 20px;
                         margin-right: 20px;
+                        a {
+                            &:hover {
+                                color: red;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    li.separate {
+                        @media screen and (max-width: 800px) {
+                            display: none;
+                        }
+                    }
+                    @media screen and (max-width: 800px) {
+                        display: block;
                     }
                 }
+                @media screen and (max-width: 800px) {
+                    display: none;
+                    float: none;
+                    background-color: #111111;
+                    width: 30%;
+                }
+                @media screen and (max-width: 450px) {
+                    width: 50%;
+                    display: none;
+                    float: none;
+                    background-color: #111111;
+                }
+            }
+            .show-menu {
+                color: #fff;
+                display: none;
+                margin: 23px 36px;
+                position: fixed;
+                cursor: pointer;
+                span {
+                    font-size: 30px;
+                }
+                @media screen and (max-width: 800px) {
+                    display: block;
+                }
+            }
+            input#show-menu[type=checkbox] {
+                display: none;
+                -webkit-appearance: none;
             }
         }
     }
@@ -99,13 +183,9 @@ footer {
         display: flex;
     }
     .social-link {
-        float: left;
         display: flex;
-        width: 20%;
         li {
             margin-top: 23px;
-            margin-left: 20%;
-            margin-right: 20%;
             a.fa {
                 color: white;
                 text-decoration: none;
@@ -122,27 +202,45 @@ footer {
             .fa-facebook {
                 margin-left: 13%;
             }
+            @media screen and (max-width: 800px) {
+                margin-top: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            width: 100%;
         }
     }
     .logo {
         margin-left: auto;
         margin-right: auto;
-        img {
-            width: 5em;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
-            margin-bottom: 20px;
+        li {
+            @media screen and (max-width: 800px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            img {
+                width: 5em;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                @media screen and (max-width: 800px) {
+                    margin-bottom: 0;
+                    margin-top: 0;
+                }
+            }
+        }
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            display: flex;
         }
     }
     .linked-pages {
-        float: right;
         display: flex;
-        width: 20%;
         li {
             margin-top: 45px;
-            margin-left: 5%;
-            margin-right: 5%;
             a.link {
                 color: white;
                 text-decoration: none;
@@ -158,6 +256,18 @@ footer {
                 color: white;
                 font-size: 23px;
             }
+            @media screen and (max-width: 800px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            padding-bottom: 20px;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        display: block;
+        height: auto;
     }
 }

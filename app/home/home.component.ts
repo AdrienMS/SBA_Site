@@ -12,6 +12,7 @@ import { UserService } from '../_services/index';
 export class HomeComponent implements OnInit {
     currentUser: User;
     users: User[] = [];
+    user: User[] = [];
 
     constructor(private userService: UserService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -27,5 +28,9 @@ export class HomeComponent implements OnInit {
 
     private loadAllUsers() {
         this.userService.getAll().subscribe(users => { this.users = users; });
+    }
+
+    private loadUser() {
+        this.userService.getById(this.currentUser.id).subscribe(user => { this.user = user; });
     }
 }

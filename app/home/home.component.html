@@ -1,8 +1,11 @@
 ﻿<header>
-    <nav>
+    <nav class="on-top">
+        <label for="show-menu" class="show-menu"><span class="glyphicon glyphicon-menu-hamburger"></span></label>
+        <input type="checkbox" id="show-menu" role="button">
+        <a [routerLink]="['/']" class="logoTxt-responsive"><img src="assets/img/logo2.png" /></a>
         <ul class="links-url">
             <li>
-                <a [routerLink]="['/']" class="logoTxt"><img src="assets/img/SBA_logo.png" /></a>
+                <a [routerLink]="['/']" class="logoTxt"><img src="assets/img/logo2.png" /></a>
             </li>
             <li><a class="links" href="#">News</a></li>
             <li><a class="links" [routerLink]="['/shop']">Shop</a></li>
@@ -10,19 +13,19 @@
             <li><a class="links" href="#">Forum</a></li>
         </ul>
         <ul class="links-connexion">
-            <div *ngIf="users !== null && users !== undefined; else connectBlock">
-                <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
-                <li>
+            <div *ngIf="currentUser !== null && currentUser !== undefined; else connectBlock">
+                <li><a [routerLink]="['/profil']">{{currentUser.firstName}} {{currentUser.lastName}}</a></li>
+                <li class="separate">
                     <p>|</p>
                 </li>
                 <li><a [routerLink]="['/logout']">Logout</a></li>
             </div>
             <ng-template #connectBlock>
                 <li><a class="links connexion" [routerLink]="['/login']">Sign In</a></li>
-                <li>
+                <li class="separate">
                     <p>|</p>
                 </li>
-                <li><a class="links connexion" href="/register">Register</a></li>
+                <li><a class="links connexion" [routerLink]="['/register']">Register</a></li>
             </ng-template>
         </ul>
     </nav>
@@ -35,8 +38,9 @@
             </video>
         </div>
         <div class="logo">
-            <img src="../../assets/img/SBA_logo.png" />
-            <h2>Space Battle Arena</h2>
+            <img src="../../assets/img/logo2.png" />
+            <h2>Space Conflict</h2>
+            <a href="#" class="download">Download now !</a>
         </div>
         <div class="platform">
             <img src="../../assets/img/oculus-logo.png" alt="logo oculus rift" />

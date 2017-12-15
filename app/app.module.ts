@@ -20,6 +20,8 @@ import { HomeComponent } from './home/index';
 import { ShopComponent } from './shop/index';
 import { SmithyComponent } from './smithy/index';
 import { RegisterComponent } from './register/index';
+import { ProfilComponent } from './profil/index';
+import { AboutComponent } from './about/index';
 
 @NgModule({
     imports: [
@@ -35,7 +37,9 @@ import { RegisterComponent } from './register/index';
         HomeComponent,
         ShopComponent,
         SmithyComponent,
-        RegisterComponent
+        RegisterComponent,
+        ProfilComponent,
+        AboutComponent
     ],
     providers: [
         AuthGuard,

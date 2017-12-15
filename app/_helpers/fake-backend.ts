@@ -33,6 +33,8 @@ export let fakeBackendProvider = {
                                 username: user.username,
                                 firstName: user.firstName,
                                 lastName: user.lastName,
+                                email: user.email,
+                                reset_password: "",
                                 token: 'fake-jwt-token'
                             }
                         })));

@@ -1,0 +1,315 @@
+<header>
+    <nav class="on-top">
+        <label for="show-menu" class="show-menu"><span class="glyphicon glyphicon-menu-hamburger"></span></label>
+        <input type="checkbox" id="show-menu" role="button">
+        <a [routerLink]="['/']" class="logoTxt-responsive"><img src="assets/img/logo2.png" /></a>
+        <ul class="links-url">
+            <li>
+                <a [routerLink]="['/']" class="logoTxt"><img src="assets/img/logo2.png" /></a>
+            </li>
+            <li><a class="links" href="#">News</a></li>
+            <li><a class="links" [routerLink]="['/shop']">Shop</a></li>
+            <li><a class="links" [routerLink]="['/smithy']">Smithy</a></li>
+            <li><a class="links" href="#">Forum</a></li>
+        </ul>
+        <ul class="links-connexion">
+            <div *ngIf="currentUser !== null && currentUser !== undefined; else connectBlock">
+                <li><a [routerLink]="['/profil']">{{currentUser.firstName}} {{currentUser.lastName}}</a></li>
+                <li class="separate">
+                    <p>|</p>
+                </li>
+                <li><a [routerLink]="['/logout']">Logout</a></li>
+            </div>
+            <ng-template #connectBlock>
+                <li><a class="links connexion" [routerLink]="['/login']">Sign In</a></li>
+                <li class="separate">
+                    <p>|</p>
+                </li>
+                <li><a class="links connexion" [routerLink]="['/register']">Register</a></li>
+            </ng-template>
+        </ul>
+    </nav>
+</header>
+<section class="profil">
+    <div class="user-information">
+        <div class="user-image">
+            <img height="150" width="150" src="assets/img/SBA_logo.png" alt="Avatar">
+            <div class="information">
+                <p class="username">{{currentUser.username}}</p>
+                <p class="rank">rank</p>
+            </div>
+        </div>
+    </div>
+    <div class="links">
+        <div class="ring" onclick="display_games()">
+            <p id="games">Game hystory</p>
+        </div>
+        <div class="ring" onclick="display_cards()">
+            <p id="cards">Cards list</p>
+        </div>
+        <div class="ring" onclick="display_items()">
+            <p id="items">Skins list</p>
+        </div>
+        <div class="ring" onclick="display_decks()">
+            <p id="decks">Decks list</p>
+        </div>
+    </div>
+    <div class="profil-content show" id="games-hystory">
+        <h2>Games Hystory</h2>
+        <div class="game win">
+            <p class="result">WIN</p>
+            <div class="game-info">
+                <div class="player-block left">
+                    <p class="user">{{currentUser.username}}</p>
+                    <p class="life-point">10</p>
+                    <p class="action-point">35</p>
+                </div>
+                <p class="vs">VS</p>
+                <div class="player-block right">
+                    <p class="opponent">Opponent</p>
+                    <p class="life-point-opponent">0</p>
+                    <p class="action-point-opponent">36</p>
+                </div>
+            </div>
+            <div class="reward">
+                <p class="rank-point">Rank point<br/>+25</p>
+                <p class="gold">Gold<br/>+367</p>
+            </div>
+        </div>
+        <div class="game loose">
+            <p class="result">LOOSE</p>
+            <div class="game-info">
+                <div class="player-block left">
+                    <p class="user">{{currentUser.username}}</p>
+                    <p class="life-point">0</p>
+                    <p class="action-point">20</p>
+                </div>
+                <p class="vs">VS</p>
+                <div class="player-block right">
+                    <p class="opponent">Opponent</p>
+                    <p class="life-point-opponent">30</p>
+                    <p class="action-point-opponent">21</p>
+                </div>
+            </div>
+            <div class="reward">
+                <p class="rank-point">Rank point<br/>-15</p>
+                <p class="gold">Gold<br/>+103</p>
+            </div>
+        </div>
+        <div class="game win">
+            <p class="result">WIN</p>
+            <div class="game-info">
+                <div class="player-block left">
+                    <p class="user">{{currentUser.username}}</p>
+                    <p class="life-point">10</p>
+                    <p class="action-point">35</p>
+                </div>
+                <p class="vs">VS</p>
+                <div class="player-block right">
+                    <p class="opponent">Opponent</p>
+                    <p class="life-point-opponent">0</p>
+                    <p class="action-point-opponent">36</p>
+                </div>
+            </div>
+            <div class="reward">
+                <p class="rank-point">Rank point<br/>+25</p>
+                <p class="gold">Gold<br/>+367</p>
+            </div>
+        </div>
+    </div>
+    <div class="profil-content" id="cards-list">
+        <h2>Cards List</h2>
+        <ul class="list">
+            <li class="card">
+                <img class="card-img" src="assets/img/SBA_logo.png" alt="card" />
+                <p class="name">Name</p>
+            </li>
+            <li class="card">
+                <img class="card-img" src="assets/img/SBA_logo.png" alt="card" />
+                <p class="name">Name</p>
+            </li>
+            <li class="card">
+                <img class="card-img" src="assets/img/SBA_logo.png" alt="card" />
+                <p class="name">Name</p>
+            </li>
+            <li class="card">
+                <img class="card-img" src="assets/img/SBA_logo.png" alt="card" />
+                <p class="name">Name</p>
+            </li>
+            <li class="card">
+                <img class="card-img" src="assets/img/SBA_logo.png" alt="card" />
+                <p class="name">Name</p>
+            </li>
+            <li class="card">
+                <img class="card-img" src="assets/img/SBA_logo.png" alt="card" />
+                <p class="name">Name</p>
+            </li>
+        </ul>
+    </div>
+    <div class="profil-content" id="skins-list">
+        <h2>Skins List</h2>
+    </div>
+    <div class="profil-content" id="decks-list">
+        <h2>Decks List</h2>
+        <ul class="list">
+            <li class="deck">
+                <img class="deck-img" src="assets/img/SBA_logo.png" alt="deck" />
+                <p class="name">Name</p>
+            </li>
+            <li class="deck">
+                <img class="deck-img" src="assets/img/SBA_logo.png" alt="deck" />
+                <p class="name">Name</p>
+            </li>
+            <li class="deck">
+                <img class="deck-img" src="assets/img/SBA_logo.png" alt="deck" />
+                <p class="name">Name</p>
+            </li>
+            <li class="deck">
+                <img class="deck-img" src="assets/img/SBA_logo.png" alt="deck" />
+                <p class="name">Name</p>
+            </li>
+            <li class="deck">
+                <img class="deck-img" src="assets/img/SBA_logo.png" alt="deck" />
+                <p class="name">Name</p>
+            </li>
+            <li class="deck">
+                <img class="deck-img" src="assets/img/SBA_logo.png" alt="deck" />
+                <p class="name">Name</p>
+            </li>
+        </ul>
+    </div>
+    <!--<h2>Profile</h2>
+    <div class="global-information">
+        <div class="user-information">
+            <div class="avatar">
+                <img height="150" width="150" src="assets/img/SBA_logo.png" alt="Avatar">
+            </div>
+            <form name="form" (ngSubmit)="modify()">
+                <div class="form-group">
+                    <label for="username">User name</label>
+                    <input type="text" class="form-control" name="username" value={{currentUser.username}} [(ngModel)]="currentUser.username" #username="ngModel" id="username" [disabled]="is_disabled" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" value={{currentUser.email}} id="email" [(ngModel)]="currentUser.email" #email="ngModel" [disabled]="is_disabled" />
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary" disabled>Validate</button>
+                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                    />
+                </div>
+            </form>
+            <button class="modify" id="modify" (click)="activate_modifications()">Modify</button>
+        </div>
+        <div class="rank-information">
+            <div class="rank-img">
+                <img height="150" width="150" src="assets/img/SBA_logo.png" alt="Rank">
+            </div>
+            <p>Rank</p>
+            <p>Rank point</p>
+        </div>
+    </div>
+    <div class="game-history">
+        <h3>Game hystory</h3>
+        <div class="game win">
+            <p class="result">WIN</p>
+            <div class="game-info">
+                <div class="player-block left">
+                    <p class="user">{{currentUser.username}}</p>
+                    <p class="life-point">10</p>
+                    <p class="action-point">35</p>
+                </div>
+                <p class="vs">VS</p>
+                <div class="player-block right">
+                    <p class="opponent">Opponent</p>
+                    <p class="life-point-opponent">0</p>
+                    <p class="action-point-opponent">36</p>
+                </div>
+            </div>
+            <div class="reward">
+                <p class="rank-point">Rank point<br/>+25</p>
+                <p class="gold">Gold<br/>+367</p>
+            </div>
+        </div>
+        <div class="game loose">
+            <p class="result">LOOSE</p>
+            <div class="game-info">
+                <div class="player-block left">
+                    <p class="user">{{currentUser.username}}</p>
+                    <p class="life-point">0</p>
+                    <p class="action-point">20</p>
+                </div>
+                <p class="vs">VS</p>
+                <div class="player-block right">
+                    <p class="opponent">Opponent</p>
+                    <p class="life-point-opponent">30</p>
+                    <p class="action-point-opponent">21</p>
+                </div>
+            </div>
+            <div class="reward">
+                <p class="rank-point">Rank point<br/>-15</p>
+                <p class="gold">Gold<br/>+103</p>
+            </div>
+        </div>
+        <div class="game win">
+            <p class="result">WIN</p>
+            <div class="game-info">
+                <div class="player-block left">
+                    <p class="user">{{currentUser.username}}</p>
+                    <p class="life-point">10</p>
+                    <p class="action-point">35</p>
+                </div>
+                <p class="vs">VS</p>
+                <div class="player-block right">
+                    <p class="opponent">Opponent</p>
+                    <p class="life-point-opponent">0</p>
+                    <p class="action-point-opponent">36</p>
+                </div>
+            </div>
+            <div class="reward">
+                <p class="rank-point">Rank point<br/>+25</p>
+                <p class="gold">Gold<br/>+367</p>
+            </div>
+        </div>
+        <div class="game win">
+            <p class="result">WIN</p>
+            <div class="game-info">
+                <div class="player-block left">
+                    <p class="user">{{currentUser.username}}</p>
+                    <p class="life-point">10</p>
+                    <p class="action-point">35</p>
+                </div>
+                <p class="vs">VS</p>
+                <div class="player-block right">
+                    <p class="opponent">Opponent</p>
+                    <p class="life-point-opponent">0</p>
+                    <p class="action-point-opponent">36</p>
+                </div>
+            </div>
+            <div class="reward">
+                <p class="rank-point">Rank point<br/>+25</p>
+                <p class="gold">Gold<br/>+367</p>
+            </div>
+        </div>
+        <div class="game win">
+            <p class="result">WIN</p>
+            <div class="game-info">
+                <div class="player-block left">
+                    <p class="user">{{currentUser.username}}</p>
+                    <p class="life-point">10</p>
+                    <p class="action-point">35</p>
+                </div>
+                <p class="vs">VS</p>
+                <div class="player-block right">
+                    <p class="opponent">Opponent</p>
+                    <p class="life-point-opponent">0</p>
+                    <p class="action-point-opponent">36</p>
+                </div>
+            </div>
+            <div class="reward">
+                <p class="rank-point">Rank point<br/>+25</p>
+                <p class="gold">Gold<br/>+367</p>
+            </div>
+        </div>
+    </div>-->
+</section>

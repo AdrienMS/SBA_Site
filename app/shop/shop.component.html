@@ -1,8 +1,11 @@
 <header>
-    <nav>
+    <nav class="on-top">
+        <label for="show-menu" class="show-menu"><span class="glyphicon glyphicon-menu-hamburger"></span></label>
+        <input type="checkbox" id="show-menu" role="button">
+        <a [routerLink]="['/']" class="logoTxt-responsive"><img src="assets/img/logo2.png" /></a>
         <ul class="links-url">
             <li>
-                <a [routerLink]="['/']" class="logoTxt"><img src="assets/img/SBA_logo.png" /></a>
+                <a [routerLink]="['/']" class="logoTxt"><img src="assets/img/logo2.png" /></a>
             </li>
             <li><a class="links" href="#">News</a></li>
             <li><a class="links" [routerLink]="['/shop']">Shop</a></li>
@@ -10,18 +13,19 @@
             <li><a class="links" href="#">Forum</a></li>
         </ul>
         <ul class="links-connexion">
-            <div *ngIf="connect">connect</div>
-            <li>{{user_item}}</li>
-            <div *ngIf="users; else connectBlock">
-                <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
-                <p><a [routerLink]="['/logout']">Logout</a></p>
+            <div *ngIf="currentUser !== null && currentUser !== undefined; else connectBlock">
+                <li><a [routerLink]="['/profil']">{{currentUser.firstName}} {{currentUser.lastName}}</a></li>
+                <li class="separate">
+                    <p>|</p>
+                </li>
+                <li><a [routerLink]="['/logout']">Logout</a></li>
             </div>
             <ng-template #connectBlock>
                 <li><a class="links connexion" [routerLink]="['/login']">Sign In</a></li>
-                <li>
+                <li class="separate">
                     <p>|</p>
                 </li>
-                <li><a class="links connexion" href="/register">Register</a></li>
+                <li><a class="links connexion" [routerLink]="['/register']">Register</a></li>
             </ng-template>
         </ul>
     </nav>
